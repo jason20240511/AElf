@@ -31,5 +31,5 @@ jobs:
         run: |
           ls
           pwd
-          cd bench/AELF.Benchmark
+          cd bench/AElf.Benchmark
           dotnet run --filter '*MinerTests*' '*MiningTxHubBenchmark*'
