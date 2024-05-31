@@ -29,5 +29,7 @@ jobs:
         
       - name: Test
         run: |
+          ls
+          pwd
           cd bench/AELF.Benchmark
           dotnet run --filter '*MinerTests*' '*MiningTxHubBenchmark*'
