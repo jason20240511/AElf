@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: dotnet restore AElf.All.sln --verbosity quiet
         
-      - name: Build
-        run: dotnet build AElf.All.sln --no-restore /clp:ErrorsOnly /p:GeneratePackageOnBuild=false --verbosity quiet
+      # - name: Build
+      #   run: dotnet build AElf.All.sln --no-restore /clp:ErrorsOnly /p:GeneratePackageOnBuild=false --verbosity quiet
         
       - name: Test
         run: |
