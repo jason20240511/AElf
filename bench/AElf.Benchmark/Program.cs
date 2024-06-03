@@ -18,7 +18,13 @@ internal class Program
                }))
         {
             application.Initialize();
-            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, new DebugInProcessConfig());
+            var config = new DebugInProcessConfig()
+                        .WithSummaryStyle(SummaryStyle.Default.WithMaxParameterColumnWidth(50))
+                        .AddExporter(XmlExporter.Default)
+                        .AddExporter(HtmlExporter.Default)
+                        .AddExporter(new HtmlSummaryExporter())
+                        .AddExporter(CsvExporter.Default); 
+            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, config);
         }
     }
 
