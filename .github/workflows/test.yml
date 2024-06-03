@@ -4,6 +4,7 @@ on:
     branches:
       - '**'
 
+
 env:
   DOTNET_INSTALL_DIR: "./.dotnet"
   Solution_Name: AElf.All.sln 
