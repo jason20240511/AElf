@@ -7,6 +7,8 @@ on:
 env:
   DOTNET_INSTALL_DIR: "./.dotnet"
   Solution_Name: AElf.All.sln 
+  Service_Name: AELF
+  
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -35,3 +37,9 @@ jobs:
           cd bench/AElf.Benchmark
           # dotnet run --filter '*MinerTests*' '*BlockExecutingParallelTests*'
           dotnet run --filter '*MinerTests*'
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ Service_Name }}
+          path: bench/AElf.Benchmark/BenchmarkDotNet.Artifacts/results
+          retention-days: 30
