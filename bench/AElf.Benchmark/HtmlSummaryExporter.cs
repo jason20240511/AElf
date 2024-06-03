@@ -1,5 +1,3 @@
-namespace benchmark2;
-
 using BenchmarkDotNet.Exporters;
 using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Reports;
